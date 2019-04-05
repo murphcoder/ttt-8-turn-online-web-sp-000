@@ -11,12 +11,11 @@ def input_to_index(input)
 end
 
 def position_taken?(board,p_move)
-  return (board[p_move] == "X" || return board[p_move] =="O")
-  return !(board[p_move] == " " || board[p_move] == "" || board[p_move] == nil)
+  return (board[p_move] == "X" || return board[p_move] =="O") || !(board[p_move] == " " || board[p_move] == "" || board[p_move] == nil)
 end
 
 def valid_move?(board,p_move)
-  return (p_move >= 0 && p_move <= 8 && !position_taken?(board,p_move))
+  return (p_move >= 0 && p_move <= 8)
 end
 
 def move(board,move,x_or_o = "X")
@@ -24,6 +23,11 @@ def move(board,move,x_or_o = "X")
 end
 
 def turn(board)
-  puts "Please enter 1-9:"
+  print "Please enter 1-9:"
   input = gets.strip
-  index = 
+  index = input_to_index(input)
+  until valid_move?(board,index) && !position_taken?(board,index)
+    if position_taken?(board,index)
+      puts "Sorry, that position is taken, please select another."
+      display_board(board)
+      elsif
