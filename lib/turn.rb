@@ -22,3 +22,8 @@ end
 def move(board,move,x_or_o = "X")
   board[move] = x_or_o
 end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = 
