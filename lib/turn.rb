@@ -26,10 +26,10 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  until valid_move?(board,index) && !position_taken?(board,index)
+  until valid_move?(board,index)
     if position_taken?(board,index)
       puts "Sorry, that position is taken, please select another."
-    elsif !valid_move?(board,index)
+    else
       puts "Sorry, that is not a valid move. Please select a number 1 through 9."
     end
     input = gets.strip
