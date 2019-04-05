@@ -15,7 +15,7 @@ def position_taken?(board,p_move)
 end
 
 def valid_move?(board,p_move)
-  return (p_move >= 0 && p_move <= 8)
+  return (p_move >= 0 && p_move <= 8 && !position_taken?(board,p_move))
 end
 
 def move(board,move,x_or_o = "X")
