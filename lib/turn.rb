@@ -23,7 +23,7 @@ def move(board,move,x_or_o = "X")
 end
 
 def turn(board)
-  print "Please enter 1-9:"
+  print "Please enter 1-9: "
   input = gets.strip
   index = input_to_index(input)
   until valid_move?(board,index) && !position_taken?(board,index)
