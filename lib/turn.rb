@@ -29,5 +29,12 @@ def turn(board)
   until valid_move?(board,index) && !position_taken?(board,index)
     if position_taken?(board,index)
       puts "Sorry, that position is taken, please select another."
-      display_board(board)
-      elsif
+    elsif !valid_move(board,index)
+      puts "Sorry, that is not a valid move. Please select a number 1 through 9."
+    end
+    input = gets.strip
+    index = input_to_index(input)
+  end
+  move(board,index)
+  display_board(board)
+end
