@@ -11,7 +11,7 @@ def input_to_index(input)
 end
 
 def position_taken?(board,p_move)
-  return (board[p_move] == "X" || return board[p_move] =="O") || !(board[p_move] == " " || board[p_move] == "" || board[p_move] == nil)
+  return ((board[p_move] == "X") || return (board[p_move] =="O") || !(board[p_move] == " ") || (board[p_move] == "") || (board[p_move] == nil))
 end
 
 def valid_move?(board,p_move)
